@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Metric/Imperial Converter</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Metric/Imperial Converter</h1>
+    </header>
+    <section>
+      <div id="testui">
+        <form id="convertForm" class="border">
+          <input
+            type="text"
+            id="convertField"
+            name="input"
+            placeholder="Example : 3.1mi..."
+          />
+          <input id="convert" type="submit" value="Convert!" />
+          <p id="result"></p>
+          <code id="jsonResult"></code>
+        </form>
+      </div>
+    </section>
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.1.min.js"
+      integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#convertForm").submit(function (event) {
+          event.preventDefault();
+          $.ajax({
+            url: "/api/convert",
+            type: "get",
+            data: $("#convertForm").serialize(),
+            success: function (data) {
+              $("#result").text(data.string || data);
+              $("#jsonResult").text(JSON.stringify(data));
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

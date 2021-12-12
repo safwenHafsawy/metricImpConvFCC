@@ -1,0 +1,85 @@
+body {
+  background-color: #264653;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr;
+  justify-items: center;
+  align-items: center;
+}
+
+code {
+  background-color: #264653;
+}
+
+hr {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+section,
+header {
+  grid-row: 3;
+  grid-column: 2;
+  margin: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #e5e5e5;
+}
+
+header {
+  grid-row: 2;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#testui-title {
+  text-align: center;
+}
+
+#convertField {
+  height: 25px;
+  width: 250px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  align-self: center;
+  border-color: #2a9d8f;
+}
+
+#convertField:focus {
+  width: 300px;
+  outline: 3px solid #2a9d8f;
+  border-color: transparent;
+}
+
+#convert {
+  color: #081c15;
+  background-color: #e5e5e5;
+  border-radius: 15px;
+  font-family: monospace;
+  width: 100px;
+  align-self: center;
+}
+
+#convert:hover {
+  background-color: #264653;
+  color: #e5e5e5;
+  border-color: #2a9d8f;
+}
+
+#convertForm {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+
+#result {
+  align-self: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 5px;
+}
+
+#jsonResult {
+  align-self: flex-start;
+}
